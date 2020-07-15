@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "610702974229",
+    "firebase_url": "https://deskpixel-97089.firebaseio.com",
+    "project_id": "deskpixel-97089",
+    "storage_bucket": "deskpixel-97089.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610702974229:android:8f5e6cd74a22f309b85d1c",
+        "android_client_info": {
+          "package_name": "com.example.deskpixel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610702974229-ajt9pp2ve8elp4qpfdvhnp27f39j9nk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.deskpixel",
+            "certificate_hash": "50ecf35a1edba8b9234b03ddaedecb6af16e6087"
+          }
+        },
+        {
+          "client_id": "610702974229-t4gjvek6f41ij0hprmpddptte7h026al.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyL9jEtFgN3mWknnoRg-opCghAXBgkZqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610702974229-t4gjvek6f41ij0hprmpddptte7h026al.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
