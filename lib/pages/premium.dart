@@ -17,36 +17,6 @@ class WallScreen extends StatefulWidget {
 }
 
 class _WallScreenState extends State<WallScreen> {
-
- ScrollController _scrollcontroller = ScrollController();
- int currentMax=7;
-
-  // StreamSubscription<QuerySnapshot> subscription;
-  // List<DocumentSnapshot> wallpapersList;
-  // final CollectionReference collectionReference = Firestore.instance.collection("walls");
-
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-
-  //   subscription = collectionReference.snapshots().listen((datasnapshot) {
-  //     setState(() {
-  //       wallpapersList = datasnapshot.documents;
-  //     });
-  //   });
-
-
-  // }
-
-
-
-  // @override
-  // void dispose() {
-  //   subscription?.cancel();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     var height= MediaQuery.of(context).size.height;
