@@ -1,16 +1,13 @@
 # deskpixel
 
-A new Flutter project.
+A new Flutter project. ie Flutter Wallpaper Application.
 
-## Getting Started
+Used Pexels Api for fetching some trending photos.
 
-This project is a starting point for a Flutter application.
+Used firebase and Google Drive for storing hots wallpapers.
 
-A few resources to get you started if this is your first Flutter project:
+Used java code for setting up Wallpaper in HomeScreen and LockScreen. So, Do checkout the MainActivity.java File.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+If you like it, drop a Star 😍
+![](ScreenShots/ss.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
