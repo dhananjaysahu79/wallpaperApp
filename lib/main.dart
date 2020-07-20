@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
        builder: (context,ThemeNotifier notifier,child){
          return MaterialApp(
            debugShowCheckedModeBanner: false,
+           title: "Deskpixel",
+           color: Color.fromARGB(255, 40, 63, 77),
            theme: notifier.darktheme?ThemeData(
               pageTransitionsTheme: PageTransitionsTheme(
                builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder(),}),

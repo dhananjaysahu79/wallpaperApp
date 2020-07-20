@@ -1,10 +1,7 @@
-
-import 'package:deskpixel/pages/fullimage.dart';
+import 'package:deskpixel/pages/fullscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
-import 'dart:async';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 
 
@@ -34,7 +31,7 @@ class _WallScreenState extends State<WallScreen> {
       ),
     ),
      body: StreamBuilder<QuerySnapshot>(
-       stream:Firestore.instance.collection("Your firebase collection name goes here..").snapshots(),
+       stream:Firestore.instance.collection("your collection id goes here").snapshots(),
        builder:(BuildContext context ,AsyncSnapshot <QuerySnapshot>snapshot){
          if(snapshot.hasError)
            return Center(child: Text("${snapshot.error}"));
@@ -61,7 +58,7 @@ class _WallScreenState extends State<WallScreen> {
                        barrierColor: Colors.white,
                        transitionDuration: Duration(milliseconds: 500),
                        pageBuilder: (context, animation, secondaryAnimation) {
-                         return FullImage(imgPath,img, "desk$i");
+                         return FullScreen(imgPath,img);
                        },
                     )
                   );
@@ -69,8 +66,6 @@ class _WallScreenState extends State<WallScreen> {
                 },
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: new Hero(
-                    tag:  "desk$i",
                     child: new FadeInImage(
                       image: new AdvancedNetworkImage(
                         img,
@@ -80,7 +75,6 @@ class _WallScreenState extends State<WallScreen> {
                       fit: BoxFit.cover,
                       placeholder: AssetImage("Assets/Images/loading.gif")
                     ),
-                  ),
                 ),
             ),
               );

@@ -19,6 +19,37 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+
+  static final MobileAdTargetingInfo targetInfo =new  MobileAdTargetingInfo(
+    keywords: <String>["wallpapers","amoled","deskpixel"],
+  );
+
+  BannerAd bannerAd;
+  BannerAd createAd(){
+    return new BannerAd(
+      adUnitId: "ca-app-pub-3957166776873231/2252628909",
+      size: AdSize.smartBanner,
+      targetingInfo: targetInfo,
+    );
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+     FirebaseAdMob.instance.initialize(appId: "ca-app-pub-3957166776873231~3090519114");
+     bannerAd=createAd()..load()..show(
+       anchorType: AnchorType.bottom,
+       anchorOffset: -3
+      );
+  }
+  @override
+  void dispose() {
+  bannerAd?.dispose();
+    super.dispose();
+  }
+
+
   @override
   TextEditingController t=new TextEditingController();
 
@@ -32,17 +63,20 @@ class _LandingPageState extends State<LandingPage> {
        drawer:Drawer(
          child:Column(
            children:<Widget>[
-            Container(
-              height: 220,
-              width:  double.infinity,
-              decoration: BoxDecoration(
-              color: Colors.transparent,
-              image: DecorationImage(
-                alignment: Alignment.topLeft,
-                fit: BoxFit.cover,
-                image: AssetImage("Assets/Images/drawerimg.jpg")
-                )
-            ),
+            Padding(
+              padding: const EdgeInsets.only(top:8.0,bottom: 8.0),
+              child: Container(
+                height: 220,
+                width:  double.infinity,
+                decoration: BoxDecoration(
+                color: Colors.transparent,
+                image: DecorationImage(
+                  alignment: Alignment.center,
+                  fit: BoxFit.fitHeight,
+                  image: AssetImage("Assets/Images/ic_launcher.png")
+                  )
+              ),
+              ),
             ),
             SizedBox(height:10),
              ListTile(
@@ -130,7 +164,12 @@ class _LandingPageState extends State<LandingPage> {
           Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-          new Padding(padding: EdgeInsets.all(height/15),
+          new Padding(padding: EdgeInsets.only(top:height/25,bottom:height/25,left: 15),
+             child:Builder(
+            builder: (BuildContext context){
+              return IconButton(icon: Icon(Icons.menu,color:widget.darktheme?Colors.white:Colors.black), onPressed:()=>Scaffold.of(context).openDrawer(),);
+            },
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left:32.0,top: 32),
@@ -251,14 +290,14 @@ class _LandingPageState extends State<LandingPage> {
         ],
       ),
 
-        floatingActionButton: FloatingActionButton(
-          child: Builder(
-            builder: (BuildContext context){
-              return IconButton(icon: Icon(Icons.keyboard_arrow_left), onPressed:()=>Scaffold.of(context).openDrawer(),);
-            },
-            ),
-          backgroundColor: Colors.red, onPressed: () {  },
-          ),
+        // floatingActionButton: FloatingActionButton(
+        //   child: Builder(
+        //     builder: (BuildContext context){
+        //       return IconButton(icon: Icon(Icons.keyboard_arrow_left), onPressed:()=>Scaffold.of(context).openDrawer(),);
+        //     },
+        //     ),
+        //   backgroundColor: Colors.red, onPressed: () {  },
+        //   ),
         ),
     );
   }

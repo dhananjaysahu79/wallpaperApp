@@ -1,10 +1,9 @@
-import 'package:deskpixel/pages/fullimage.dart';
+import 'package:deskpixel/pages/fullscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart'as http;
 import 'dart:convert';
 import 'dart:async';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'dart:math';
 
@@ -14,12 +13,10 @@ class TrendingPage extends StatelessWidget {
   TrendingPage(this.darktheme);
   @override
 
-  List apikeys=["Your Pexel Api keys goes here..."];
-
+ List apikeys=["Your pexel api keys goes here.."];
   Future getWallPaper()async{
     List<ApiData> data =[];
   var url="https://api.pexels.com/v1/curated?per_page=400&page=1";
-  //final random = new Random();
    var apikey =apikeys[Random().nextInt(apikeys.length)];
    await http.get(url,
    headers:{
@@ -67,13 +64,11 @@ class TrendingPage extends StatelessWidget {
               child: new InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                    return FullImage(imgPath,imgPath, "desk$i");
+                    return FullScreen(imgPath,imgPath);
                   }));
                 },
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: new Hero(
-                    tag:  "desk$i",
                     child: new FadeInImage(
                       image: new AdvancedNetworkImage(
                         imgPath,
@@ -83,7 +78,6 @@ class TrendingPage extends StatelessWidget {
                       fit: BoxFit.cover,
                       placeholder: AssetImage("Assets/Images/loading.gif")
                     ),
-                  ),
                 ),
               ),
             ); },

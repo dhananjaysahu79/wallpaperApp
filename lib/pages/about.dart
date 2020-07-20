@@ -37,7 +37,7 @@ class About extends StatelessWidget {
                       'Assets/Images/Astronaut.svg',
                       fit: BoxFit.cover,
                       alignment: Alignment.topCenter,
-                      height: screenWidth * 0.5,
+                      height: screenWidth * 0.4,
                     ),
                   ),
                   Padding(
@@ -161,7 +161,6 @@ class About extends StatelessWidget {
                             image: DecorationImage(image: AssetImage("Assets/Images/github.png"),fit: BoxFit.cover),
                             shape: BoxShape.circle,
                             ),
-
                           ),
                         ),
                       ],
@@ -172,26 +171,42 @@ class About extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
               child: Padding(
-                padding: const EdgeInsets.all(18.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Text("SOURCE CODE OF THIS APP: ",textScaleFactor: 0.8,),
-                  SizedBox(height:3),
-                  InkWell(
-                    onTap:()async{
-                          if (await canLaunch("https://github.com/dhananjaysahu79/wallpaperApp"))
-                            await  launch('https://github.com/dhananjaysahu79/wallpaperApp');
-                            else
-                              throw "link not found";
-                        },
-                    child: Text("https://github.com/dhananjaysahu79/wallpaperApp",style: TextStyle(color: Colors.blue),))
+                  Row(
+                    children: <Widget>[
+                      Text("SOURCE CODE OF THIS APP:  ",textScaleFactor: 0.8,),
+                      InkWell(
+                        onTap:()async{
+                              if (await canLaunch("https://github.com/dhananjaysahu79/wallpaperApp"))
+                                await  launch('https://github.com/dhananjaysahu79/wallpaperApp');
+                                else
+                                  throw "link not found";
+                            },
+                        child: Text("Click Here",textScaleFactor: 0.8,style: TextStyle(color: Colors.blue),)),
+                        ]
+                   ),
+                    SizedBox(height:8),
+                    Row(
+                    children: <Widget>[
+                      Text("PRIVACY POLICY:  ",textScaleFactor: 0.8,),
+                      InkWell(
+                        onTap:()async{
+                              if (await canLaunch("https://deskpixel.flycricket.io/privacy.html"))
+                                await  launch('https://deskpixel.flycricket.io/privacy.html');
+                                else
+                                  throw "link not found";
+                            },
+                        child: Text("Click Here",textScaleFactor: 0.8,style: TextStyle(color: Colors.blue),)),
+                    ]
+                   ),
                 ],
             ),
-              ),
+            ),
           )
         ],
       ),
