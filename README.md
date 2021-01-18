@@ -1,6 +1,7 @@
 # deskpixel
 
 A new Flutter project. ie Flutter Wallpaper Application.
+playstore link https://play.google.com/store/apps/details?id=com.sahu.deskpixel
 
 Used Pexels Api for fetching some trending photos.
 
