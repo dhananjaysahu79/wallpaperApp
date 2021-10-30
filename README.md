@@ -3,6 +3,7 @@
 A new Flutter project. ie Flutter Wallpaper Application.
 playstore link https://play.google.com/store/apps/details?id=com.sahu.deskpixel
 
+demo short video: https://youtu.be/M-B1aMrmbIg
 Used Pexels Api for fetching some trending photos.
 
 Used cloud firestore and Google Drive for storing hots wallpapers.
